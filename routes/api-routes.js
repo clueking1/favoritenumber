@@ -3,10 +3,9 @@ const router = express.Router()
 const getdata = require('../models/getdata')
 
 router.get('/', (req, res) => {
-    console.log(getdata.numbers())
     getdata.numbers()
     .then(result => {
-        res.json(result)
+        res.json(result.map(t => t.pickNum))
     })
 })
 
