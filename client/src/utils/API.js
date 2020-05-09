@@ -2,9 +2,9 @@ import axios from "axios";
 
 export default {
   // Gets all posts
-    createUser: function() {
+    getNums: function() {
         return axios({
-            method: 'get',
+            method: 'post',
             headers: { 'content-type': 'application/json' },
             url: '/',
         })

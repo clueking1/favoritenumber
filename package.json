@@ -2,7 +2,7 @@
   "name": "favoritenumber",
   "version": "1.0.0",
   "description": "This is a simple algorithm. Firstly pick a number between 1-10 then click the next button if you don't see your number or like if you have! Very soon you will be seeing only the number you chose being generated!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -24,6 +24,7 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1"
   }

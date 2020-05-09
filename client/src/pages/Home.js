@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import API from '../utils/API'
 
 function Home() {
+
+    useEffect(() => {
+        API.getNums()
+        .then(res => console.log(res))
+    },[])
+
 
     return (
         <div className="displayWrapper">
