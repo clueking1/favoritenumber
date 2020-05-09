@@ -1,0 +1,26 @@
+{
+  "name": "favoritenumber",
+  "version": "1.0.0",
+  "description": "This is a simple algorithm. Firstly pick a number between 1-10 then click the next button if you don't see your number or like if you have! Very soon you will be seeing only the number you chose being generated!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clueking1/favoritenumber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
