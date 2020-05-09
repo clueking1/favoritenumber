@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS Nums;
+CREATE DATABASE Nums;
+
+use Nums;
+
+CREATE TABLE numbers (
+    id INT NOT NULL AUTO_INCREMENT,
+    pickNum INT NOT NULL,
+    perc INT NOT NULL,
+    PRIMARY KEY (id)
+);

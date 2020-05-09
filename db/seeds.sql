@@ -1,0 +1,10 @@
+INSERT INTO numbers (pickNum, perc) VALUES (1, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (2, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (3, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (4, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (5, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (6, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (7, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (8, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (9, 10);
+INSERT INTO numbers (pickNum, perc) VALUES (10, 10);
