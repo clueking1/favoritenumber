@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const user = require('./routes/api-routes')
 
 
 const PORT = process.env.PORT || 7001
@@ -17,6 +18,7 @@ app.get("*", function(req, res) {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
+app.use(user)
 
 app.listen(PORT, () => {
     console.log('listening on ' + PORT)
