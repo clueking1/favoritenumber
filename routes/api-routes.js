@@ -9,6 +9,10 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/', (req, res) => {
+    getdata.change(req.body.num)
+})
+
 
 
 module.exports = router

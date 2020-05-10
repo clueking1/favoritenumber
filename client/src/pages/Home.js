@@ -3,6 +3,7 @@ import API from '../utils/API'
 import Game from '../components/choose'
 import Start from '../components/start'
 
+
 function Home() {
 
     const [nums, setNums] = useState([])

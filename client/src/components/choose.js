@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-
-
+import API from '../utils/API'
 
 function Game(props) {
-    
+
     const [rando, setRando] = useState()
 
     const allnums = props.nums
@@ -32,6 +31,13 @@ function Game(props) {
         }
     }
 
+    function next() {
+        console.log(rando)
+        API.next({
+            num: rando
+        })
+    }
+
     return (
         <div className="displayWrapper">
             <div className="number">
@@ -42,7 +48,9 @@ function Game(props) {
                 <button 
                 onClick={() => {
                     current = 0 
-                    loop()}}
+                    loop()
+                    next()            
+                }}
                 >
                 Next</button>
             </div>

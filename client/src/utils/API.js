@@ -9,4 +9,12 @@ export default {
             url: '/',
         })
     },
+    next: function(postdata) {
+        return axios({
+            method: 'put',
+            headers: { 'content-type': 'application/json' },
+            url: '/',
+            data: postdata
+        })
+    },
 };

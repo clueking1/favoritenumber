@@ -13,6 +13,18 @@ const getdata = {
         })
         
     },
+    change: function(num) {
+        
+            con.query('SELECT perc from numbers where pickNum = ?',[num], (err, results) => {
+                if (err) {
+                    throw err
+                }
+                console.log(Number(results[0].perc) - 1)
+            })
+        
+        }
+        
+   
 
 }
 
