@@ -2,21 +2,8 @@ import React, { useEffect, useState } from 'react'
 import API from '../utils/API'
 
 
-function Game() {
-
-    const [nums, setNums] = useState([])
-    const [percs, setPercs] = useState([])
-
-    useEffect(() => {
-        API.getNums()
-        .then(res => {
-            res.data.map(t => {
-                setPercs(t.perc) 
-                setNums(t.pickNum)
-            })
-        })
-    },[])
-
+function Game(props) {
+    console.log(props)
 
     return (
         <div className="displayWrapper">

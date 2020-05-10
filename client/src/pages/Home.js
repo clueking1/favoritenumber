@@ -12,10 +12,8 @@ function Home() {
     useEffect(() => {
         API.getNums()
         .then(res => {
-            res.data.map(t => {
-                setPercs(t.perc) 
-                setNums(t.pickNum)
-            })
+            setNums(res.data.map(t => t.pickNum))
+            setPercs(res.data.map(t => t.perc))
         })
     },[])
 
@@ -23,11 +21,11 @@ function Home() {
         setShow(false)
     }
 
-   console.log(nums)
+
     return (
         <div className="AllWrapper">
             {show ? <Start switchShow = {switchShow} /> : undefined}
-            {!show ? <Game /> : undefined}
+            {!show ? <Game nums = {nums} percs = {percs}/> : undefined}
             
         </div>
     )
