@@ -36,7 +36,19 @@ const getdata = {
             })
         
         
-    }
+    },
+
+    up: function(num) {
+        return new Promise(function(resolve, reject) {
+            con.query('SELECT perc from numbers where pickNum = ?',[num], (err, results) => {
+                if (err) {
+                    reject(err)
+                }
+                resolve(Number(results[0].perc) + 1)
+            })
+        })
+        
+    },
 
 }
 

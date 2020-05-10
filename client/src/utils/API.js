@@ -17,4 +17,12 @@ export default {
             data: postdata
         })
     },
+    like: function(postdata) {
+        return axios({
+            method: 'put',
+            headers: { 'content-type': 'application/json' },
+            url: '/like',
+            data: postdata
+        })
+    },
 };

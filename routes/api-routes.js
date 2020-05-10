@@ -16,6 +16,13 @@ router.put('/', (req, res) => {
     })
 })
 
+router.put('/like', (req, res) => {
+    getdata.up(req.body.num)
+    .then(result => {
+        getdata.update(result, req.body.num)
+    })
+})
+
 
 
 module.exports = router

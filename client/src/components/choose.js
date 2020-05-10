@@ -38,6 +38,13 @@ function Game(props) {
         })
     }
 
+    function like() {
+        console.log(rando)
+        API.like({
+            num: rando
+        })
+    }
+
     return (
         <div className="displayWrapper">
             <div className="number">
@@ -59,7 +66,9 @@ function Game(props) {
                 <button
                 onClick={() => {
                     current = 0 
-                    loop()}}
+                    loop()
+                    like()
+                }}
                 >
                 Like</button>
             </div>
