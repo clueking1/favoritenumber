@@ -11,6 +11,9 @@ router.post('/', (req, res) => {
 
 router.put('/', (req, res) => {
     getdata.change(req.body.num)
+    .then(result => {
+        getdata.update(result, req.body.num)
+    })
 })
 
 
