@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import API from '../utils/API'
-import Game from '../components/choose'
-import Start from '../components/start'
 
-function Home() {
+
+function Game() {
 
     const [nums, setNums] = useState([])
     const [percs, setPercs] = useState([])
-    const [show, setShow] = useState(true)
 
     useEffect(() => {
         API.getNums()
@@ -19,18 +17,23 @@ function Home() {
         })
     },[])
 
-    function switchShow() {
-        setShow(false)
-    }
 
-   console.log(nums)
     return (
-        <div className="AllWrapper">
-            {show ? <Start switchShow = {switchShow} /> : undefined}
-            {!show ? <Game /> : undefined}
+        <div className="displayWrapper">
+            <div className="number">
+            <h3>{}</h3>
+            </div>
+            
+            <div className="next">
+                <button>Next</button>
+            </div>
+            
+            <div className="like">
+            <button>Like</button>
+            </div>
             
         </div>
     )
 }
 
-export default Home
+export default Game

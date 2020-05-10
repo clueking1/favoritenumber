@@ -5,8 +5,10 @@ const getdata = require('../models/getdata')
 router.post('/', (req, res) => {
     getdata.numbers()
     .then(result => {
-        res.json(result.map(t => t.pickNum))
+        res.json(result)
     })
 })
+
+
 
 module.exports = router

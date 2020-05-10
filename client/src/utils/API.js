@@ -8,7 +8,5 @@ export default {
             headers: { 'content-type': 'application/json' },
             url: '/',
         })
-    }
-
-
+    },
 };
