@@ -8,8 +8,11 @@ function Game(props) {
 
     const allnums = props.nums
     const weight = props.percs
-    let totalweight=eval(weight.join("+"))
-    const weighed= [] 
+    //let totalweight=eval(weight.join("+"))
+    //let totalweight = weight.reduce((a, b) => a + b, 0)
+    
+    const weighed= []
+    console.log(weighed) 
     let current=0
 
     useEffect(() => loop())
