@@ -18,6 +18,13 @@ function Home() {
         })
     },[])
 
+    function newPercs() {
+        API.getNums()
+        .then(res => {
+          setPercs(res.data.map(t => t.perc))
+        })
+    }
+
     function switchShow() {
         setShow(false)
     }
@@ -26,7 +33,7 @@ function Home() {
     return (
         <div className="AllWrapper">
             {show ? <Start switchShow = {switchShow} /> : undefined}
-            {!show ? <Game nums = {nums} percs = {percs}/> : undefined}
+            {!show ? <Game nums = {nums} percs = {percs} newPercs = {newPercs}/> : undefined}
             
         </div>
     )

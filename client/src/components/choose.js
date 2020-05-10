@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import API from '../utils/API'
 
 function Game(props) {
-
+    
     const [rando, setRando] = useState()
 
     const allnums = props.nums
     const weight = props.percs
     let totalweight=eval(weight.join("+"))
-    const weighed= [] //new array to hold "weighted" fruits
+    const weighed= [] 
     let current=0
 
     useEffect(() => loop())
@@ -32,17 +32,33 @@ function Game(props) {
     }
 
     function next() {
-        console.log(rando)
-        API.next({
-            num: rando
-        })
+        if (weight[Number(rando) - 1] === 0) {
+            weight[Number(rando) - 1] = 0
+        } else {
+            weight[Number(rando) - 1] -= 1
+        }
+        
+        console.log(weight)
+        // API.next({
+        //     num: rando
+        // })
+        // .then(() => {
+        //     props.newPercs()     
+        // })
     }
 
     function like() {
-        console.log(rando)
-        API.like({
-            num: rando
-        })
+        // if (weight[Number(rando) - 1] === 0) {
+        //     weight[Number(rando) - 1] = 0
+        // } else {
+            weight[Number(rando) - 1] += 1
+        //}
+       
+        console.log(weight)
+      
+        // API.like({
+        //     num: rando
+        // })
     }
 
     return (
@@ -56,7 +72,7 @@ function Game(props) {
                 onClick={() => {
                     current = 0 
                     loop()
-                    next()            
+                    next()   
                 }}
                 >
                 Next</button>
