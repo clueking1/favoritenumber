@@ -35,7 +35,7 @@ function Game(props) {
         if (weight[Number(rando) - 1] === 0) {
             weight[Number(rando) - 1] = 0
         } else {
-            weight[Number(rando) - 1] -= 1
+            weight[Number(rando) - 1] -= 3
         }
         
         console.log(weight)
