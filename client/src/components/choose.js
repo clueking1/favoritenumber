@@ -3,7 +3,8 @@ import API from '../utils/API'
 
 function Game(props) {
     
-    const [rando, setRando] = useState()
+    const [rando, setRando] = useState(0)
+    const [prev, setPrev] = useState(0)
 
     const allnums = props.nums
     const weight = props.percs
@@ -32,10 +33,13 @@ function Game(props) {
     }
 
     function next() {
-        if (weight[Number(rando) - 1] === 0) {
-            weight[Number(rando) - 1] = 0
+        console.log(prev)
+        if (prev === rando) {
+            weight[Number(rando) - 1] -= 4
+            setPrev(rando)
         } else {
             weight[Number(rando) - 1] -= 3
+            setPrev(rando)
         }
         
         console.log(weight)
@@ -51,7 +55,13 @@ function Game(props) {
         // if (weight[Number(rando) - 1] === 0) {
         //     weight[Number(rando) - 1] = 0
         // } else {
-            weight[Number(rando) - 1] += 1
+            if (prev === rando) {
+                weight[Number(rando) - 1] += 2
+                setPrev(rando)
+            } else {
+                weight[Number(rando) - 1] += 1
+                setPrev(rando)
+            }
         //}
        
         console.log(weight)
